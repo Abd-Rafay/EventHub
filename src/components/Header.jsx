@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom';
 
 function Header() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-warning bg-gradient">
+    <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundColor: "#FF7518" }}>
       <div className="container">
-        <Link className="navbar-brand fw-bold" to="/">EventHub</Link>
+        <Link className="navbar-brand fw-bold d-flex align-items-center" to="/">
+          <i className="bi bi-calendar-event me-2"></i>
+          EventHub
+        </Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span className="navbar-toggler-icon"></span>
         </button>

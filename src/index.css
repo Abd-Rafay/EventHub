@@ -11,7 +11,27 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --primary-orange: #f97316;
+  --primary-orange-dark: #ea580c;
+  --primary-orange-light: #fb923c;
+  --text-white: #ffffff;
+  --text-soft-white: #fef9f1;
+
 }
+
+/* custom.css */
+.bg-orange-50 { background-color: #fff7ed; }
+.bg-orange-100 { background-color: #ffedd5; }
+.bg-orange-500 { background-color: #f97316; }
+.bg-orange-600 { background-color: #ea580c; }
+
+.text-orange-100 { color: #ffedd5; }
+.text-orange-200 { color: #fed7aa; }
+.text-orange-600 { color: #ea580c; }
+
+.fs-5xl { font-size: 3rem; font-weight: 700; }
+.fs-6xl { font-size: 3.75rem; font-weight: 700; }
 
 a {
   font-weight: 500;
@@ -24,10 +44,9 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
