@@ -18,7 +18,6 @@ function CountdownTimer({ targetDate, eventName = "Upcoming Event" }) {
   }, [targetDate]);
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
   useEffect(() => {
     // Set up the interval
     const timer = setInterval(() => {
