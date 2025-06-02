@@ -24,7 +24,7 @@ function Contact() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-orange-600 text-white py-5">
+      <section className="bg-orange-500 text-white py-5">
         <div className="container text-center">
           <h1 className="display-5 fw-bold mb-3">Get in Touch</h1>
           <p className="lead">
