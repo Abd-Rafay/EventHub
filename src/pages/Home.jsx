@@ -5,7 +5,7 @@ function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="text-white text-center py-5 bg-orange-500">
+      <section className="text-white h-100 text-center py-5 bg-orange-500">
         <div className="container py-5">
           <h1 className="display-2 fw-bold mb-4">Your Gateway to
 Amazing Events</h1>
