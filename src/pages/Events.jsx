@@ -50,13 +50,13 @@ function Events() {
   return (
     <>
       <div
-        className="position-relative"
+        className="position-relative height"
         style={{ backgroundColor: "#FF7518", overflow: "hidden" }}
       >
         <div className="container py-5">
           <div className="row justify-content-center">
             <div className="col-lg-10">
-              <div className="text-center text-white mb-5">
+              <div className="text-center text-white mt-5 mb-5">
                 <h1 className="display-4 fw-bold mb-3">
                   Discover Events Near You
                 </h1>
@@ -116,8 +116,8 @@ function Events() {
 
         {upcomingEvents.length > 0 && (
           <>
-            <div className="mb-4 d-flex align-items-center justify-content-between">
-              <h2 className="fw-bold m-0">Featured Events</h2>
+            <div className="mb-4 text-center">
+              <h2 className="fw-bold mb-3">Featured Events</h2>
               <div className="text-muted small">
                 Don't miss out on these incredible upcoming events
               </div>
@@ -134,8 +134,8 @@ function Events() {
 
         {pastEvents.length > 0 && (
           <>
-            <div className="mb-4 d-flex align-items-center justify-content-between">
-              <h2 className="fw-bold m-0">Past Events</h2>
+            <div className="mb-4 text-center">
+              <h2 className="fw-bold mb-3">Past Events</h2>
               <div className="text-muted small">
                 See what amazing events we've hosted recently
               </div>

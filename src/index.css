@@ -33,6 +33,9 @@
 .fs-5xl { font-size: 3rem; font-weight: 700; }
 .fs-6xl { font-size: 3.75rem; font-weight: 700; }
 
+.height{
+  min-height: 100vh;
+}
 a {
   font-weight: 500;
   color: #646cff;
