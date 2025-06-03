@@ -41,8 +41,8 @@ As part of the internship application process, the goal was to:
    ```bash
    git clone https://github.com/your-username/event-hub.git
    cd event-hub
-  npm install
-  npm run dev
+   npm install
+   npm run dev
 Visit http://localhost:5173 in your browser.
 
 ## 🗂️ Project Structure
