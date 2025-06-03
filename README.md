@@ -1,12 +1,62 @@
-# React + Vite
+# 🗓️ Event Hub – Featured Events Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive, interactive single-page React application built for an internship case study. The page showcases featured local events in a clean, mobile-friendly layout using React and Bootstrap.
 
-Currently, two official plugins are available:
+## 🌐 Live Preview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+👉 [event-hub-liart.vercel.app](https://event-hub-liart.vercel.app/)
 
-## Expanding the ESLint configuration
+## 🎯 Objective
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+As part of the internship application process, the goal was to:
+
+> Build a responsive, interactive "Featured Events" page using modern web development tools and best practices.
+
+## 🚀 Features
+
+- 🔗 **Navigation bar** with logo and links to `Home`, `Events`, and `Contact`
+- 🖼️ **Hero section** with a heading: _"Discover Events Near You"_
+- 🎉 **Featured Events** section with event cards including:
+  - Event name
+  - Date & time
+  - Location
+  - Short description
+  - “Register” button (non-functional)
+- 📱 Fully responsive layout (mobile/tablet/desktop)
+- 🔍 **Bonus**:
+  - Search bar to filter events by name
+  - Events loaded dynamically from javascript
+
+## 🛠️ Tech Stack
+
+- ⚛️ React
+- 🎨 Bootstrap 5
+- 🧠 JavaScript (ES6+)
+- 🧾 Vite (for fast development build)
+- 📁 Deployed on Vercel
+
+## 📦 Installation & Running Locally
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/event-hub.git
+   cd event-hub
+  npm install
+  npm run dev
+Visit http://localhost:5173 in your browser.
+
+## 🗂️ Project Structure
+kotlin
+Copy
+Edit
+event-hub/
+├── public/
+├── src/
+│   ├── components/
+│   ├── data/
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── package.json
+└── vite.config.js
+
