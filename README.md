@@ -45,18 +45,5 @@ As part of the internship application process, the goal was to:
    npm run dev
 Visit http://localhost:5173 in your browser.
 
-## 🗂️ Project Structure
-kotlin
-Copy
-Edit
-event-hub/
-├── public/
-├── src/
-│   ├── components/
-│   ├── data/
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── package.json
-└── vite.config.js
+
 
