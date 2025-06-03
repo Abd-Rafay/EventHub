@@ -1,7 +1,7 @@
-// === src/components/Layout.jsx ===
 import React from 'react';
 import Header from '../components/Header';
-import { Outlet } from 'react-router-dom';
+import Footer from '../components/Footer';
+import { Outlet, Link } from 'react-router-dom';
 
 function Layout() {
   return (
@@ -10,11 +10,7 @@ function Layout() {
       <main className="flex-grow-1">
         <Outlet />
       </main>
-      <footer className="bg-dark text-white text-center py-3">
-        <div className="container">
-          <small>&copy; {new Date().getFullYear()} EventHub. All rights reserved.</small>
-        </div>
-      </footer>
+    <Footer />
     </div>
   );
 }

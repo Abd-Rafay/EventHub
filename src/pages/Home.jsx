@@ -5,13 +5,16 @@ function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="text-white h-100 text-center py-5 bg-orange-500">
+      <section className="text-white h-100 text-center py-5 bg-orange-500"
+              style={{
+          backgroundImage: "linear-gradient(to bottom right,#f97316, #ea580c)",
+        }}>
         <div className="container py-5">
-          <h1 className="display-3 fw-medium mb-0">Your Gateway to</h1>
-          <h2 className="display-2 mt-0 fw-bold mb-4 text-orange-100">
+          <h1 className="display-4 fw-medium mb-0">Your Gateway to</h1>
+          <h2 className="display-3 mt-0 fw-bold mb-4 text-orange-100">
             Amazing Events
           </h2>
-          <p className="h4 mb-5">
+          <p className="h5 mb-5">
             Discover, connect, and experience the best events in your community.
             From tech conferences to music festivals, find your next adventure
             here.

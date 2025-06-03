@@ -24,10 +24,13 @@ function Contact() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-orange-500 text-white py-5">
+      <section className="bg-orange-500 text-white py-5"
+              style={{
+          backgroundImage: "linear-gradient(to bottom right,#f97316, #ea580c)",
+        }}>
         <div className="container text-center">
-          <h1 className="display-5 fw-bold mb-3">Get in Touch</h1>
-          <p className="lead">
+          <h1 className="display-4 fw-bold mb-3">Get in Touch</h1>
+          <p className="h5">
             Have questions about events? Want to partner with us? We'd love to 
             hear from you!
           </p>

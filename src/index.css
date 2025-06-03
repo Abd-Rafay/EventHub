@@ -36,6 +36,24 @@
 .height{
   min-height: 100vh;
 }
+
+.bg-gradient {
+  background: linear-gradient(to bottom right, #f97316, #ea580c);
+}
+/* Add this to your existing styles */
+.hover-white:hover {
+  color: white !important;
+  transition: color 0.2s;
+}
+
+footer a:hover i {
+  color: var(--bs-orange) !important;
+  transition: color 0.2s;
+}
+
+footer .btn:hover {
+  opacity: 0.9;
+}
 a {
   font-weight: 500;
   color: #646cff;

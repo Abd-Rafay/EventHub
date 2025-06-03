@@ -51,7 +51,10 @@ function Events() {
     <>
       <div
         className="position-relative height"
-        style={{ backgroundColor: "#FF7518", overflow: "hidden" }}
+        style={{
+          backgroundImage: "linear-gradient(to bottom right,#f97316, #ea580c)",
+          overflow: "hidden"
+        }}
       >
         <div className="container py-5">
           <div className="row justify-content-center">
@@ -60,7 +63,7 @@ function Events() {
                 <h1 className="display-4 fw-bold mb-3">
                   Discover Events Near You
                 </h1>
-                <p className="lead px-md-5">
+                <p className="h5 px-md-5">
                   Find amazing events happening in your area. From tech
                   conferences to music festivals, discover experiences that
                   inspire and connect you with your community.
@@ -88,8 +91,8 @@ function Events() {
                 type="text"
                 className="form-control"
                 placeholder="Search events..."
-                value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
+                value={searchTerm}
               />
             </div>
           </div>
@@ -100,10 +103,11 @@ function Events() {
                 <i className="bi bi-filter"></i>
               </span>
               <select
+                className="form-select"
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="form-select"
               >
+        
                 {categories.map((category) => (
                   <option key={category} value={category}>
                     {category === "all" ? "All Categories" : category}
