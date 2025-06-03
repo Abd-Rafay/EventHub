@@ -19,7 +19,7 @@ function Home() {
             From tech conferences to music festivals, find your next adventure
             here.
           </p>
-          <Link to="/events" className="btn btn-light px-4 py-2 fw-semibold">
+          <Link to="/events" className="btn btn-light text-orange-600 px-4 py-2 fw-semibold">
             Browse Events
           </Link>
         </div>
@@ -132,10 +132,10 @@ function Home() {
             their next great experience. Your adventure starts here.
           </p>
           <div className="d-flex justify-content-center gap-3">
-            <Link to="/events" className="btn btn-light px-4 py-2">
+            <Link to="/events" className="btn btn-light text-orange-600 px-4 py-2">
               Browse Events Now
             </Link>
-            <Link to="/contact" className="btn btn-outline-light px-4 py-2">
+            <Link to="/contact" className="btn btn-outline-light bg-opacity-10 px-4 py-2">
               Get in Touch
             </Link>
           </div>

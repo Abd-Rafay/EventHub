@@ -1,6 +1,6 @@
 import React from 'react';
 
-function EventCard({ event, isPast = false }) {
+function EventCard({ event, isPast = false, onRegister }) {
   // Format date to display nicely
   const formatDate = (dateStr) => {
     const options = { month: 'short', day: 'numeric', year: 'numeric' };
@@ -17,11 +17,11 @@ function EventCard({ event, isPast = false }) {
     };
     return categoryColors[event.category] || 'bg-secondary';
   };
-  
+
   return (
-    <div className={`card h-100 shadow-sm border-0 ${isPast ? 'bg-light' : ''}`}>
+    <div className={`card h-100 shadow-sm border-0 ${isPast ? 'bg-light' : ''} position-relative`}>
       <div className="card-img-top position-relative" style={{
-        height: '120px',
+        minHeight: '150px',
         backgroundColor: '#e67e22',
         backgroundImage: event.image ? `url(${event.image})` : null,
         backgroundSize: 'cover',
@@ -45,8 +45,10 @@ function EventCard({ event, isPast = false }) {
           <i className="bi bi-geo-alt me-2"></i>
           <small>{event.location}</small>
         </div>
-        <p className="card-text small mb-4">{event.description}</p>
-        <button className={`btn ${isPast ? 'btn-secondary disabled' : 'btn-warning'} w-100`}>
+        <p className="card-text small mb-4">{event.description}</p>        <button 
+          className={`btn ${isPast ? 'btn-secondary disabled' : 'btn-warning'} w-100`}
+          onClick={() => !isPast && onRegister && onRegister(event)}
+        >
           {isPast ? 'Event Ended' : 'Register Now'}
         </button>
       </div>

@@ -6,6 +6,14 @@ import { events } from "../data/events";
 function Events() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [showRegistration, setShowRegistration] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    attendees: 1
+  });
   const currentDate = new Date();
 
   // Get the next upcoming event (first event chronologically)
@@ -17,7 +25,6 @@ function Events() {
     }))
     .filter((event) => event.dateObj > currentDate)
     .sort((a, b) => a.dateObj - b.dateObj)[0]; // gets the earliest future event
-
   const nextEventDate = nextEvent ? nextEvent.date : null;
   console.log(nextEvent);
   // Extract categories from events data
@@ -25,6 +32,35 @@ function Events() {
     "all",
     ...new Set(events.map((event) => event.category || "Uncategorized")),
   ];
+
+  // Handle input changes in the registration form
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+  
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Form validation feedback
+    alert("Thank you for registering! You would receive a confirmation email shortly.");
+    setShowRegistration(false);
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      attendees: 1
+    });
+  };
+
+  // Handler for event registration
+  const handleEventRegistration = (event) => {
+    setSelectedEvent(event);
+    setShowRegistration(true);
+  };
 
   // Filter events based on search term and category
   const filteredEvents = useMemo(() => {
@@ -129,7 +165,7 @@ function Events() {
             <div className="row g-4 mb-5">
               {upcomingEvents.map((event) => (
                 <div key={event.id} className="col-md-6 col-lg-4">
-                  <EventCard event={event} />
+                  <EventCard event={event} onRegister={handleEventRegistration} />
                 </div>
               ))}
             </div>
@@ -163,6 +199,93 @@ function Events() {
           </div>
         )}
       </div>
+      
+      {/* Registration Modal */}
+      {showRegistration && selectedEvent && (
+        <div className="position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-75 d-flex align-items-center justify-content-center p-3" style={{ zIndex: 1050 }}>
+          <div className="bg-white rounded p-4 w-100 overflow-auto" style={{ maxWidth: '500px', maxHeight: '90vh' }}>
+            <div className="d-flex justify-content-between align-items-center mb-3">
+              <h5 className="fw-bold text-orange-600 mb-0">Register for {selectedEvent.name}</h5>
+              <button className="btn-close" onClick={() => setShowRegistration(false)}></button>
+            </div>
+            
+            <form onSubmit={handleSubmit}>
+              <div className="mb-3">
+                <label htmlFor="name" className="form-label small fw-semibold">Full Name</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              
+              <div className="mb-3">
+                <label htmlFor="email" className="form-label small fw-semibold">Email Address</label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              
+              <div className="mb-3">
+                <label htmlFor="phone" className="form-label small fw-semibold">Phone Number</label>
+                <input
+                  type="tel"
+                  className="form-control"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                />
+              </div>
+              
+              <div className="mb-4">
+                <label htmlFor="attendees" className="form-label small fw-semibold">Number of Attendees</label>
+                <select
+                  className="form-select"
+                  id="attendees"
+                  name="attendees"
+                  value={formData.attendees}
+                  onChange={handleInputChange}
+                >
+                  {[1, 2, 3, 4, 5].map(num => (
+                    <option key={num} value={num}>{num}</option>
+                  ))}
+                </select>
+              </div>
+              
+              <div className="mb-3 form-check">
+                <input type="checkbox" className="form-check-input" id="terms" required />
+                <label className="form-check-label small" htmlFor="terms">
+                  I agree to the terms and conditions
+                </label>
+              </div>
+              
+              <div className="d-flex gap-2 mt-4">
+                <button type="submit" className="btn btn-warning flex-grow-1">
+                  Complete Registration
+                </button>
+                <button 
+                  type="button" 
+                  className="btn btn-outline-secondary" 
+                  onClick={() => setShowRegistration(false)}
+                >
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </>
   );
 }
